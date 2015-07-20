@@ -28,10 +28,31 @@ app.get('/', function (req, res) {
 
 //API ROUTES
 
-//get current projects from the database
-
+//show all projects
+app.get('/api/projects', function (req, res) { 
+  Project.find(function (err, projects) { 
+    res.json(projects);
+  });
+});
 
 //create a new project for current user
+app.post('/api/users/current/projects', function (req, res)
+  //create a new project using the form data ('req.body')
+  var newProj = new Project({ 
+    project_name: req.body.project_name,
+    organization: req.body.organization,
+    contact: req.body.contact,
+    address: req.body.address,
+    city_state: req.body.city_state,
+    zip: req.body.zip,
+    phone: req.body.phone
+  });
+
+  //save new project
+  newProj.save();
+
+
+
 
 
 
