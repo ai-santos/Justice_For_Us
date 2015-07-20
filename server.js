@@ -10,7 +10,7 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({extended: true}));  
 
 //connect to mongodb
-mongoose.connect(
+mongoose.createConnection(
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
   'mongodb://localhost/justiceForUsProj'
