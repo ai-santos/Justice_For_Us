@@ -56,20 +56,22 @@ $(document).ready(function() {
     $.get('/api/projects', function (data) {
       var allProjects = data;
       console.log(allProjects);
-      //iterate through all blog
-      _each(allProjects, function(data) {
+      //iterate through all projects
+      _.each(allProjects, function(data) {
 
         //pass each project through template to append to view 
         var $projectHtml = $(template(data));
-        console.log($("#"))
-
-
+        console.log($projectHtml);
+        console.log($("#current-projects"));
+        $("#current-projects").append($projectHtml);
       };
     });
+  };
 
-  });
+  all()
 
-
+  //create new project to save to the server
+  
   //create new project object from form data
   var entryName = $("#entry-proj").val();
   var orgName = $("#entry-org").val();
