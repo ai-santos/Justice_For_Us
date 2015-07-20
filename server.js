@@ -36,7 +36,7 @@ app.get('/api/projects', function (req, res) {
 });
 
 //create a new project for current user
-app.post('/api/users/current/projects', function (req, res)
+app.post('/api/users/current/projects', function (req, res) {
   //create a new project using the form data ('req.body')
   var newProj = new Project({ 
     project_name: req.body.project_name,
@@ -47,7 +47,7 @@ app.post('/api/users/current/projects', function (req, res)
     zip: req.body.zip,
     phone: req.body.phone
   });
-
+});
   //save new project
   newProj.save();
 
