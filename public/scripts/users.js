@@ -64,14 +64,19 @@ $(document).ready(function() {
         console.log($projectHtml);
         console.log($("#current-projects"));
         $("#current-projects").append($projectHtml);
-      };
+      });
     });
   };
 
   all()
 
-  //create new project to save to the server
-  
+  // //create new project to save to the server
+  // var create = function(newEntry) {
+  //   var projObj = {}
+
+
+  // }  
+
   //create new project object from form data
   var entryName = $("#entry-proj").val();
   var orgName = $("#entry-org").val();
