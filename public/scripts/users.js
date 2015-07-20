@@ -49,9 +49,28 @@
 
 $(document).ready(function() {
 
-  var templatingFunction = _.template($("#projects-template").html());
+  var template = _.template($("#projects-template").html());
 
-//create new project object from form data
+  //get all archived project posts
+  var all = function(){
+    $.get('/api/projects', function (data) {
+      var allProjects = data;
+      console.log(allProjects);
+      //iterate through all blog
+      _each(allProjects, function(data) {
+
+        //pass each project through template to append to view 
+        var $projectHtml = $(template(data));
+        console.log($("#"))
+
+
+      };
+    });
+
+  });
+
+
+  //create new project object from form data
   var entryName = $("#entry-proj").val();
   var orgName = $("#entry-org").val();
   var contactName = $("#entry-contact").val();
