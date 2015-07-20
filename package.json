@@ -1,0 +1,29 @@
+{
+  "name": "justice_for_us",
+  "version": "1.0.0",
+  "description": "Social Media App for Activists",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asantos3026"
+  },
+  "keywords": [
+    "Social",
+    "Media",
+    "Activism"
+  ],
+  "author": "Aileen Santos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "chai": "^3.2.0",
+    "express": "^4.13.1",
+    "mongoose": "^4.0.7",
+    "node": "0.0.0",
+    "session": "^0.1.0",
+    "underscore": "^1.8.3"
+  }
+}

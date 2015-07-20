@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  
+  
+  <!-- bootstrap css -->
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- custom styles -->
+  <link type="text/css" rel="stylesheet" href="styles/projects.css">
+
+</head>
+<body>
+  <a href="index.html">Home</a><br><br> 
+<div class="container">    
+  <div class="row">
+    <div class="col-xs-12 col-md-3"><h4>Submit Your Project and Organization Information</h4><form id="projects-form"><div class="form-group">
+      <input type="Project Name" class="form-control" id="entry-proj" placeholder="Project Name" autofocus>
+      <input type="Organization Name" class="form-control" id="entry-org" placeholder="Organization" autofocus>
+      <input type="Contact Info" class="form-control" id="entry-contact" placeholder="Contact" autofocus>
+      <input type="Street Address" class="form-control" id="entry-address" placeholder="Address" autofocus>
+      <input type="City, State" class="form-control" id="entry-city-state" placeholder="City, State" autofocus>
+      <input type="Zip Code" class="form-control" id="entry-zip" placeholder="Zip" autofocus>
+      <input type="Phone Info" class="form-control" id="entry-phone" placeholder="Phone" autofocus>
+    </div>
+
+
+    <div class="form-group">
+      <input type="submit" class="btn btn-success" value="Add your Project!">
+    </div><br></div>
+    <div class="col-xs-5 col-md-9"><img src="http://www.rpmelectricservice.net/uploads/1/1/7/2/11729851/3167110_orig.jpg" autofocus><br></div>
+  </div>
+ 
+ <!-- Add projects template here -->
+  <div class="col-xs-12 col-md-3"><h4>Current Projects</h4>
+    <div class="projects_list" id="current-projects">
+  </div>
+
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- WOW CDNJ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+  <!-- underscore -->
+  <script src="scripts/underscore.js"></script>
+
+   <!--underscore template -->
+  <script type="text/template" id="projects-template">
+    <div class="projects_list"
+  <p>
+    <%= project_name %><br> 
+    <%= organization %><br>
+    <%= contact %><br>  
+    <%= address %><br>
+    <%= city_state %><br>
+    <%= zip %><br>
+    <%= phone %> 
+  </p>
+    </div>
+  </script>
+
+  <!-- custom scripts -->
+  <script type="text/javascript" src="scripts/users.js"></script>
+
+</body>
+</html>
