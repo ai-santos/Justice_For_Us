@@ -29,13 +29,13 @@ app.get('/', function (req, res) {
 //API ROUTES
 
 //get current projects from the database
-app.post('/api/')
+
 
 //create a new project for current user
 
 
 
 app.listen(process.env.PORT || 3000);
- }); 
+
 
 
