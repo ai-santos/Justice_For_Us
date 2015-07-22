@@ -22,4 +22,5 @@ $('#nav .navbar-nav li>a').click(function(){
 })
 
 
-});
+}); 
+

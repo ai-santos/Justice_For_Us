@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
 
 
-  	<title>Justice For Us</title>
+  	<title>JUSTICE FOR US</title>
   	<meta name="generator" content="Bootply" />
   	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   	<link href="styles/bootstrap.min.css" rel="stylesheet">
@@ -34,7 +34,7 @@
     <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <h1><a href="#" title="Bootstrap Template">Justice for Us</a>
+        <h1><a href="#" title="Bootstrap Template">JUSTICE FOR US</a>
           <p class="lead">Connecting the Revolution</p></h1>
       </div>
       <div class="col-sm-6">
@@ -70,15 +70,9 @@
           <li><a href="giving_circle.html">Giving Circle</a></li>
           <li class="active"><a href="#section1"><strong>Connect</strong></a></li>
           <li><a href="#section4">About</a></li>
-          <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" name="username" placeholder="Username">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="password" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-default">Sign In</button>
-          </form>
+          <li><a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#login-modal">Log In</a></li>
+          <li><a href="/logout">Log Out</a></li>
         </div>
       </center>
     </div>
@@ -87,7 +81,69 @@
 </div><!--/.nav-collapse -->
 </div><!--/.container -->
 </div><!--/.navbar -->
-  
+
+ <!-- signup modal -->
+  <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="signupModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+        </div>
+        <form method="post" action="/users">
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" name="user[firstName]" class="form-control" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <input type="text" name="user[lastName]" class="form-control" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <input type="text" name="user[avatar]" class="form-control" placeholder="Avatar (Image URL)">
+            </div>
+            <div class="form-group">
+              <input type="email" name="user[email]" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" name="user[password]" class="form-control" placeholder="Password">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" value="Sign Up" class="btn btn-primary">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- login modal -->
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Log In</h4>
+        </div>
+        <form method="post" action="/login">
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="email" name="user[email]" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" name="user[password]" class="form-control" placeholder="Password">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" value="Log In" class="btn btn-primary">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
 <!-- Begin page content -->
 <div class="divider" id="section1"></div>
   
@@ -124,7 +180,7 @@
       
       <hr>
       
-      <img src="/assets/example/bg_smartphones.jpg" class="img-responsive">
+      
       
       <hr>
   	</div><!--/col-->
@@ -257,12 +313,7 @@
       </h4>
       <p>Get more free templates like this at the <a href="http://bootply.com">Bootstrap Playground</a>, Bootply.</p>
       <hr>
-      <ul class="list-inline center-block">
-        <li><a href="http://facebook.com/bootply"><img src="/assets/example/soc_fb.png"></a></li>
-        <li><a href="http://twitter.com/bootply"><img src="/assets/example/soc_tw.png"></a></li>
-        <li><a href="http://google.com/+bootply"><img src="/assets/example/soc_gplus.png"></a></li>
-        <li><a href="http://pinterest.com/in1"><img src="/assets/example/soc_pin.png"></a></li>
-      </ul>
+    
       
   	</div><!--/col-->
 </div><!--/container-->
@@ -282,9 +333,8 @@
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="scripts/bootstrap.min.js"></script>
-		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
 		<script src="scripts/main.js"></script>
-    <script src="scripts/users.js"></script>
+    <script src="scripts/main.js"></script>
 
     <!-- jquery -->
   <type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
@@ -294,6 +344,9 @@
 
   <!-- underscore -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+  <!-- mapbox js -->
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
 
 	</body>
 </html>

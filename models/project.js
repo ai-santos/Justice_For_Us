@@ -1,7 +1,7 @@
 //require mongoose and other modules
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var Project = require('./project')
+// var Project = require('./project')
 
 //define the project schema
 var ProjectSchema = new Schema({ 
@@ -17,3 +17,7 @@ var ProjectSchema = new Schema({
 var Project = mongoose.model('Project', ProjectSchema);
 
 module.exports = Project;
+
+
+
+
