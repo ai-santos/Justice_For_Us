@@ -6,13 +6,16 @@ var mongoose = require('mongoose'),
     Project = require('./project')
 
 // define user schema
-var UserSchema = new Schema({
+var UserSchema = new Schema ({
   firstName: String,
   lastName: String,
   avatar: String,
   email: String,
   passwordDigest: String,
-  project: [Project.schema]
+  project: {
+    type:Schema.Types.ObjectId,
+    ref: 'Project'
+  }
 });
 
 // create a new user with secure (hashed) password
@@ -60,6 +63,8 @@ UserSchema.methods.checkPassword = function (password) {
   // run hashing algorithm (with salt) on password user enters in order to compare with `passwordDigest`
   return bcrypt.compareSync(password, this.passwordDigest);
 };
+
 var User = mongoose.model('User', UserSchema);
 
 module.exports = User;
+// module.exports = Project;

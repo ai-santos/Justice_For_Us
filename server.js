@@ -87,6 +87,7 @@ app.post('/login', function (req, res) {
   User.authenticate(userData.email, userData.password, function (err, user) {
     // saves user id to session
     req.login(user);
+    console.log("server received sign up form data: ", req.body.user);
 
     // redirect to user profile
     res.redirect('/profile');
@@ -96,14 +97,15 @@ app.post('/login', function (req, res) {
 // user profile page
 app.get('/profile', function (req, res) {
   // finds user currently logged in
-  req.currentUser(function (err, user) {
-    if (user) {
-      res.sendFile(__dirname + '/public/views/profile.html');
-    // redirect if there is no current user
-    } else {
-      res.redirect('/');
-    }
-  });
+  // req.currentUser(function (err, user) {
+  //   if (user) {
+  //     res.sendFile(__dirname + '/public/views/profile.html');
+  //   // redirect if there is no current user
+  //   } else {
+  //     res.redirect('/');
+  //   }
+  res.sendFile(__dirname + '/public/views/profile.html');
+  // });
 });
 
 // logout route (destroys session)
