@@ -2,8 +2,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 // var Project = require('./project')
-
-
+// var User = require('./user')
 
 //define the project schema
 var ProjectSchema = new Schema({ 
@@ -13,11 +12,7 @@ var ProjectSchema = new Schema({
   address: String,
   city_state: String,
   zip: String,
-  phone: String, 
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  }
+  phone: String,
 });
 
 var Project = mongoose.model('Project', ProjectSchema);

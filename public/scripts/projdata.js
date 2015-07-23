@@ -30,6 +30,7 @@ $(document).on("ready", function () {
   var create = function (serialData) {
     //send a post request to the server
     $.post('/api/projects', serialData, function (data){
+      console.log(data);
       var $projectHtml = $(template({project: data}));
       $('#current-projects').append($projectHtml);
 
@@ -50,24 +51,17 @@ $(document).on("ready", function () {
   });
 });
 
- // var update = function (phraseId, updatedWord, updatedDefinition) {
- //      // send PUT request to server to update phrase
- //      $.ajax({
- //        type: 'PATCH',
- //        url: '/api/projects/' + phraseId,
- //        data: {
- //          word: updatedWord,
- //          definition: updatedDefinition
- //        },
- //        success: function(data) {
- //          var updatedPhrase = data;
+  var update = function (targetId, serialData) {
+  //send PUT request to server to update the project
+    $.put('/api/projects/id:', serialData, function(data) {
+    //find the ID of a project
+      var targetId = req.params.id;
+    //pass the edited data into a template to append to view
+      var $projectHtml = $(template({project: data}));
+      $('#current-projects').append()
+    });
+  }        
 
- //          // replace existing phrase in view with updated phrase
- //          var $phraseHtml = $(phrasesController.template(updatedPhrase));
- //          $('#phrase-' + phraseId).replaceWith($phraseHtml);
- //        }
- //      });
- //    },
 
   
   // //DELETE a single project    

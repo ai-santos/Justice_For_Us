@@ -5,6 +5,13 @@ var mongoose = require('mongoose'),
     salt = bcrypt.genSaltSync(10),
     Project = require('./project')
 
+
+var SkillSchema = new Schema({
+  skill: String
+});
+
+var Skill = mongoose.model('Skill', SkillSchema);
+
 // define user schema
 var UserSchema = new Schema ({
   firstName: String,
@@ -14,9 +21,12 @@ var UserSchema = new Schema ({
   passwordDigest: String,
   project: {
     type:Schema.Types.ObjectId,
-    ref: 'Project'
-  }
+    ref: 'Project',
+  },
+  skills: [SkillSchema] 
 });
+
+
 
 // create a new user with secure (hashed) password
 UserSchema.statics.createSecure = function (userData, callback) {

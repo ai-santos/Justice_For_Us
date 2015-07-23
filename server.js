@@ -134,8 +134,26 @@ app.get('/api/projects', function (req, res) {
 //POST blogs to server
 app.post('/api/projects', function (req, res) { 
     var projectParams = req.body.project;
-    // var newProject = new Project(projectParams);
-    res.send(req.body)
+    var newProject = new Project(projectParams);
+    var userId = req.session.userId;
+    console.log(userId);
+    User.findOne({_id: userId}, function(err, foundUser) {
+      console.log(foundUser);
+      foundUser.project = newProject;
+
+      foundUser.save(function (err, savedUser){
+        res.json(savedUser);
+      });
+    });
+    // newProject.save(function (err, savedProject) {
+    //   res.json(savedProject);
+    // });
+    //FIND THE USER with session ID
+    //user.createPROJECT
+
+    //var newSkill = new Skill(projectParams.skill)
+    // res.send(req.body)
+    // newSkill.save(function (err, savedSkill)
     // newProject.save(function (err, savedProject) { 
     //     res.json(savedProject);
     // });
