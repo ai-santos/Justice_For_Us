@@ -4,9 +4,11 @@ var express = require('express'),
 //Require the model 
     Project = require('./models/project'),
     bodyParser = require('body-parser'),
-    _ = require("underscore"),
+    _ = require('underscore'),
     User = require('./models/user'),
     config = require('./config'),
+    mocha = require('mocha'),
+    chai = require('chai'),
     session = require('express-session');
 
 //connect to mongodb

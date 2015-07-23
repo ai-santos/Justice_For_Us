@@ -1,4 +1,5 @@
 $(document).ready(function(){/* affix the navbar after scroll below header */
+
 $('#nav').affix({
       offset: {
         top: $('header').height()-$('#nav').height()
@@ -19,7 +20,6 @@ $('#nav .navbar-nav li>a').click(function(){
   var posi = $(link).offset().top+20;
   $('body,html').animate({scrollTop:posi},700);
 })
-
 
 }); 
 
