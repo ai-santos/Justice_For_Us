@@ -9,7 +9,7 @@ var express = require('express'),
     config = process.env || require('./config'),
     mocha = require('mocha'),
     chai = require('chai'),
-    session = require('session');
+    session = require('express-session');
 
 //connect to mongodb
 mongoose.connect(
