@@ -1,8 +1,8 @@
 //require mongoose and other modules
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-// var Project = require('./project')
-// var User = require('./user')
+var Project = require('./project')
+var User = require('./user')
 
 //define the project schema
 var ProjectSchema = new Schema({ 

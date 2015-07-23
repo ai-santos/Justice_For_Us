@@ -6,7 +6,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     _ = require("underscore"),
     User = require('./models/user'),
-    // config = require('config.js'),
+    config = require('./config.js'),
     session = require('express-session');
 
 //connect to mongodb
