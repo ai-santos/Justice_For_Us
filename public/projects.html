@@ -5,14 +5,6 @@
   <title>Projects</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
-  <style>
-  body { margin:0; padding:0; }
-  #map { position:absolute; top:0; bottom:0; width:100%; }
-  </style>
-
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  
   
@@ -26,7 +18,14 @@
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
   
   <!-- mapbox link -->
-  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet' />
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet'/>
+
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet' />
+
+<style>
+  #map { position:re; top:0; bottom:0; width:70%; height: 80%; margin:500; padding:50; text-align: right;}
+</style>
 
 </head>
 <body>
@@ -49,15 +48,14 @@
     <div class="form-group">
       <input type="submit" class="btn btn-success" value="Add your Project!">
     </div><br></div>
-    <div class="col-xs-5 col-md-9" id='map'>
-    
-    <script>
-    L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg';
-    var map = L.mapbox.map('map', 'mapbox.streets')
+    <div id='map'>
+    <div class="col-xs-5 col-md-9"><script>
+L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg';
+var map = L.mapbox.map('map', 'mapbox.streets')
     .setView([40, -74.50], 9);
-  </script><br></div>
+</script><br></div>
+  </div></div>
 
- 
  
  <!-- Add projects template here -->
   <div class="col-xs-12 col-md-3"><h4>Current Projects</h4>
@@ -94,6 +92,9 @@
 
 <!-- WOW CDNJ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<!-- Mapbox Template -->
+
 
 
 </body>
