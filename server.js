@@ -6,7 +6,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     _ = require('underscore'),
     User = require('./models/user'),
-    config = require('./config'),
+    config = process.env || require('./config'),
     mocha = require('mocha'),
     chai = require('chai'),
     session = require('express-session');
@@ -209,5 +209,7 @@ app.post('/api/projects', function (req, res) {
 // });
 
 
-app.listen(config.PORT);
+app.listen(process.env.PORT || require('./config').PORT, function () {
+  console.log("server started on localhost:3000")
+});
 
