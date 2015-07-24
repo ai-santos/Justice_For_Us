@@ -5,7 +5,7 @@ body {
   height: 100%;
   /* The html and body elements cannot have any padding or margin. */
   -webkit-font-smoothing: antialiased;
-  font: normal 14px arial,sans-serif;
+  font: normal 18px 'Kreon',sans-serif;
 }
 
 .row {
@@ -115,6 +115,8 @@ h1 {
   
 /* customize nav style */
 .navbar-custom {
+    font-family: 'Kreon', serif;
+    font-size: 20px;
     background-color: #2e2e2e;
 	font-weight:700;
     text-transform:uppercase;
@@ -195,7 +197,7 @@ section {
 }
 
 .bg-2 {
-	background: url('http://i.imgur.com/MH6o2Tk.jpg?1') no-repeat center center fixed; 
+	background: url('http://i.imgur.com/MH6o2Tk.jpg?2') no-repeat center center fixed; 
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;

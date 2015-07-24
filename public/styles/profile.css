@@ -53,10 +53,9 @@ header {
 }
 
 body {
-  font-family: 'Open Sans',,Helvetica,Sans-Serif;
+  font-family: 'Open Sans', Helvetica,Sans-Serif;
   font-weight:300;
   color:#676767;
-  background:url("http://favianna.typepad.com/.a/6a00d8345357ef69e20133f330a858970b-500wi");
 }
 
 a,a:hover {
