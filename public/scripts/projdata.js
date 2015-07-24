@@ -4,15 +4,15 @@
 
 $(document).on("ready", function () {
 
-    // compile blog template
+  //compile blog template
   var template = _.template($('#projects-template').html());
 
-    L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg';
-    var map = L.mapbox.map('map', 'mapbox.streets')
+  L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg';
+  var map = L.mapbox.map('map', 'mapbox.streets')
                 .setView([40, -74.50], 9);
-    var geocoder = L.mapbox.geocoder('mapbox.places');
-   //adds marker to the page based on geocoder lng and lat
-    var showMarker = function(address, lng, lat) {
+  var geocoder = L.mapbox.geocoder('mapbox.places');
+  //adds marker to the page based on geocoder lng and lat
+  var showMarker = function(address, lng, lat) {
       L.mapbox.featureLayer({
         type: 'Feature',
         geometry: {
@@ -32,7 +32,7 @@ $(document).on("ready", function () {
     };
 
   //GET all archived project posts
-  var all = function () {
+  var all = function (serialData) {
     $.get('/api/projects', function(data) {
       console.log("Fetching all projects")
       var allProjects = data;
@@ -40,19 +40,19 @@ $(document).on("ready", function () {
       //iterate through all projects
       _.each(allProjects, function(data) {
         console.log(data)
-            //this is my address which is coming from an array of results in my api
+        //this is my address which is coming from an array of results in my api
         var address = data.address;
 
 
         //mapbox function to turn an address into  lat and long
         geocoder.query(address, function(err, result) {
             console.log('result.latlng[1]: ', result.latlng[1], '  result.latlng[0]: ', result.latlng[0]);
-             if (err) {
+            if (err) {
                console.log(err);
-             }
-             else {
+            }
+            else {
                showMarker(address, result.latlng[1], result.latlng[0]);
-             }
+            }
           });
 
         //pass each project through template to append to view 
@@ -70,7 +70,7 @@ $(document).on("ready", function () {
     //send a post request to the server
     $.post('/api/projects', serialData, function (data){
       console.log(data);
-      var $projectHtml = $(template({project: data}));
+      var $projectHtml = $(template({project: data.project}));
       $('#current-projects').append($projectHtml);
 
       console.log($projectHtml);
@@ -79,11 +79,8 @@ $(document).on("ready", function () {
 
   $('#projects-form').on('submit', function(event){
     event.preventDefault();
-    console.log("hello");
-    console.log(  $('#projects-form').serialize() )
-    // HELP!!!!!!!!!!!
-    create( $("#projects-form").serialize() );  
-
+    yolo = $("#projects-form").serialize();
+    create(yolo);
     //reset the form
     $('#projects-form')[0].reset();
 
@@ -97,7 +94,7 @@ $(document).on("ready", function () {
       var targetId = req.params.id;
     //pass the edited data into a template to append to view
       var $projectHtml = $(template({project: data}));
-      $('#current-projects').append()
+      $('#current-projects').append($projectHtml)
     });
   }        
 

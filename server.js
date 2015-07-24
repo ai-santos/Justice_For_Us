@@ -45,7 +45,7 @@ app.use('/', function (req, res, next) {
     });
   };
 
-  // destroy `session.userId` to log out user
+  //destroy `session.userId` to log out user
   req.logout = function () {
     req.session.userId = null;
     req.user = null;
@@ -135,13 +135,16 @@ app.get('/api/projects', function (req, res) {
 
 //POST blogs to server
 app.post('/api/projects', function (req, res) { 
+  console.log("---> inside post to api/projects");
     var projectParams = req.body.project;
+    console.log("---> projectParams: " + projectParams);
     var newProject = new Project(projectParams);
     var userId = req.session.userId;
-    console.log(userId);
+    console.log("---> req.session: " + req.session);
+    console.log("---> userId: " + userId);
     User.findOne({_id: userId}, function(err, foundUser) {
       console.log(foundUser);
-      foundUser.project = newProject;
+      // foundUser.project = newProject;
 
       foundUser.save(function (err, savedUser){
         res.json(savedUser);

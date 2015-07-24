@@ -12,7 +12,7 @@ var ProjectSchema = new Schema({
   address: String,
   city_state: String,
   zip: String,
-  phone: String,
+  phone: String
 });
 
 var Project = mongoose.model('Project', ProjectSchema);

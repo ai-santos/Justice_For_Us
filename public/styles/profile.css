@@ -1,5 +1,4 @@
 /* bootstrap 3 helpers */
-
 .navbar-form input, .form-inline input {
   width:auto;
 }
@@ -54,10 +53,10 @@ header {
 }
 
 body {
-  font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+  font-family: 'Open Sans',,Helvetica,Sans-Serif;
   font-weight:300;
   color:#676767;
-  background-color:#efefef;
+  background:url("http://favianna.typepad.com/.a/6a00d8345357ef69e20133f330a858970b-500wi");
 }
 
 a,a:hover {
@@ -81,8 +80,11 @@ h3.highlight  {
     border-bottom:2px solid #77CCDD;
 }
 
+#JusticeForUsIcon {
+  background: url("http://www.clker.com/cliparts/6/v/y/L/S/U/fist-hi.png");
+}
 .navbar {
-  background-color:#77CCDD;
+  background-color:teal;
     color:#ffffff;
     border-radius:0;
 }
