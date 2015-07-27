@@ -134,22 +134,40 @@ app.get('/api/projects', function (req, res) {
 })
 
 //POST blogs to server
-app.post('/api/projects', function (req, res) { 
-  console.log("---> inside post to api/projects");
-    var projectParams = req.body.project;
-    console.log("---> projectParams: " + projectParams);
-    var newProject = new Project(projectParams);
-    var userId = req.session.userId;
-    console.log("---> req.session: " + req.session);
-    console.log("---> userId: " + userId);
-    User.findOne({_id: userId}, function(err, foundUser) {
-      console.log(foundUser);
-      // foundUser.project = newProject;
+// app.post('/api/projects', function (req, res) { 
+//   // console.log("---> inside post to api/projects");
+//     var projectParams = req.body.project;
+//     // console.log("---> projectParams: " + projectParams);
+//     var newProject = new Project(projectParams);
+//     var userId = req.session.userId;
+//     // console.log("---> req.session: " + req.session);
+//     // console.log("---> userId: " + userId);
+//     User.findOne({_id: userId}, function(err, foundUser) {
+//       // console.log(foundUser);
+//       // foundUser.project = newProject;
 
-      foundUser.save(function (err, savedUser){
-        res.json(savedUser);
-      });
-    });
+//       foundUser.save(function (err, savedUser){
+//         res.json(savedUser);
+//       });
+//     });
+
+app.post('/api/projects', function (req, res) {
+  var newProject = new Project({
+      project_name: req.body.project_name,
+      organization: req.body.organization,
+      contact: req.body.contact,
+      address: req.body.address,
+      city_state: req.body.city_state,
+      zip: req.body.zip,
+      phone: req.body.phone
+  });
+  newProject.save (function (err, savedProject) {
+    res.json(savedProject);
+  });
+});
+
+
+
     // newProject.save(function (err, savedProject) {
     //   res.json(savedProject);
     // });
@@ -162,7 +180,7 @@ app.post('/api/projects', function (req, res) {
     // newProject.save(function (err, savedProject) { 
     //     res.json(savedProject);
     // });
-});
+
 
 //UPDATE the project in the server
 // app.patch('/api/projects/:id', function(req, res) {
@@ -215,4 +233,12 @@ app.post('/api/projects', function (req, res) {
 app.listen(process.env.PORT || require('./config').PORT, function () {
   console.log("server started on localhost:3000")
 });
+
+
+
+
+
+
+
+
 
