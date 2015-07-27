@@ -4,7 +4,7 @@ Justice For Us is a social media web app built by activists for activists.
 Description & Motivation:
 
 I noticed a lot of my friends in the activist community have been using social media for purposes like exchanging resources, connecting through events, and keeping informed about direct action work. Recently, a few people in the activist community 
-have had their posts removed, and their profile information shared with government agencies without permission.
+have had their posts removed, and their profile information shared with government agencies without permission. I decided to create a social network app that is built by a community member for the community. The main motivation for Justice_For_Us is to build solidarity, connection, and share resources amongst activists from various backgrounds. 
 
 How to Fire Up the Project:
 1. Fork a copy of Justice_For_Us on your github.
