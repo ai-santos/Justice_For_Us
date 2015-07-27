@@ -66,37 +66,59 @@ $(document).on("ready", function () {
 
   all();
 
-  var create = function (serialData) {
-    //send a post request to the server
-    $.post('/api/projects', serialData, function (data){
-      console.log(data);
-      var $projectHtml = $(template({project: data.project}));
-      $('#current-projects').append($projectHtml);
+//   var create = function (serialData) {
+//     //send a post request to the server
+//     $.post('/api/projects', serialData, function (data){
+//       console.log(data);
+//       var $projectHtml = $(template({project: data.project}));
+//       $('#current-projects').append($projectHtml);
 
-      console.log($projectHtml);
-    });
-  }
+//       console.log($projectHtml);
+//     });
+//   }
+
+//   $('#projects-form').on('submit', function(event){
+//     event.preventDefault();
+//     yolo = $("#projects-form").serialize();
+//     create(yolo);
+//     //reset the form
+//     $('#projects-form')[0].reset();
+
+//   });
+// });
+
 
   $('#projects-form').on('submit', function(event){
     event.preventDefault();
-    yolo = $("#projects-form").serialize();
-    create(yolo);
-    //reset the form
-    $('#projects-form')[0].reset();
 
-  });
-});
+    var Project = {
+      project_name: $('#project_name').val(),
+      organization: $('#organization-type').val(),
+      contact: $('#contact').val(),
+      address: $('#address').val(),
+      city_state: $('#city_state').val(),
+      zip: $('#zip').val(),
+      phone: $('#phone').val()
+    };
 
-  var update = function (targetId, serialData) {
-  //send PUT request to server to update the project
-    $.put('/api/projects/id:', serialData, function(data) {
-    //find the ID of a project
-      var targetId = req.params.id;
-    //pass the edited data into a template to append to view
-      var $projectHtml = $(template({project: data}));
-      $('#current-projects').append($projectHtml)
+    $.post('/api/projects', Project, function (data) {
+        $('#current-projects').append(template(data));
     });
-  }        
+  });
+
+})
+
+
+  // var update = function (targetId, serialData) {
+  // //send PUT request to server to update the project
+  //   $.put('/api/projects/id:', serialData, function(data) {
+  //   //find the ID of a project
+  //     var targetId = req.params.id;
+  //   //pass the edited data into a template to append to view
+  //     var $projectHtml = $(template({project: data}));
+  //     $('#current-projects').append($projectHtml)
+  //   });
+  // }        
 
 
   
