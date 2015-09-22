@@ -15,7 +15,7 @@ var express = require('express'),
 mongoose.connect(
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
-  'mongodb://localhost/JusticeForUs'
+  'mongodb://localhost/Justice_For_Us'
   );
 
 //middleware
@@ -144,11 +144,14 @@ app.post('/api/projects', function (req, res) {
     console.log("---> userId: " + userId);
     User.findOne({_id: userId}, function(err, foundUser) {
       console.log(foundUser);
+       newProject.save(function (err, savedProject) { 
+        res.json(savedProject);
+      });
       // foundUser.project = newProject;
 
-      foundUser.save(function (err, savedUser){
-        res.json(savedUser);
-      });
+      // foundUser.save(function (err, savedUser){
+      //   res.json(savedUser);
+      // });
     });
     // newProject.save(function (err, savedProject) {
     //   res.json(savedProject);

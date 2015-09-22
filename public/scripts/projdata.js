@@ -8,8 +8,11 @@ $(document).on("ready", function () {
   var template = _.template($('#projects-template').html());
 
   L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg';
-  var map = L.mapbox.map('map', 'mapbox.streets')
-                .setView([40, -74.50], 9);
+  var map = L.mapbox.map('map', 'mapbox.high-contrast')
+                .setView([37.782, -122.381], 12);
+
+  map.scrollWheelZoom.disable();
+                
   var geocoder = L.mapbox.geocoder('mapbox.places');
   //adds marker to the page based on geocoder lng and lat
   var showMarker = function(address, lng, lat) {
