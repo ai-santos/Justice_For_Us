@@ -1,17 +1,9 @@
-/* bootstrap 3 helpers */
-.navbar-form input, .form-inline input {
-  width:auto;
-}
 
 /* end */
 
 /* custom theme + Bootstrap resets */
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400');
+@import url(http://fonts.googleapis.com/css?family=Kreon:400,700);
 
-header {
-  min-height:180px;
-    margin-bottom:5px;
-}
 
 /* only apply sticky columns on wider screens */
 @media (min-width: 1200px) {
@@ -79,77 +71,124 @@ h3.highlight  {
     border-bottom:2px solid #77CCDD;
 }
 
-#JusticeForUsIcon {
-  background: url("http://www.clker.com/cliparts/6/v/y/L/S/U/fist-hi.png");
-}
-.navbar {
-  background-color:teal;
-    color:#ffffff;
-    border-radius:0;
-}
-.navbar-nav > li > a {
-    color:#fff;
-    padding-left:20px;
-    padding-right:20px;
-    border-left:1px solid #66BBCC;
-}
-.navbar-nav > li:last-child > a {
-    border-right:1px solid #66BBCC;
+
+
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
 }
 
-.navbar-nav li a:hover {
-    background-color:#66BBCC;
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  margin-top:50px;
+  padding-top:20px;
+  padding-bottom:20px;
 }
 
-.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
-  color: #000;
-    opacity:.9;
+
+/* Custom page CSS
+-------------------------------------------------- */
+
+#wrap > .container {
+  padding: 60px 15px 0;
+}
+.container .credit {
+  margin: 20px 0;
 }
 
-.navbar-brand {
-  color:#fff;
+#footer {
+  background-color:#414141;
 }
 
-.accordion-group {
-  border-width:0;
+#footer a {
+  color:#efefef;
 }
 
-.dropdown-menu {
-  min-width: 250px;
+h1,h2,h3,h4 {
+  font-family: 'Kreon', serif;
+  vertical-align:middle;
 }
 
-.caret {
-  color:#fff;
+
+#nav {
+  width: 100%;
+  position:static;
+  top:-32px;
+}
+
+#nav.affix {
+   position: fixed;
+   top: 0;
+   z-index:10;
+   -webkit-transition: all .6s ease-in-out;
+}
+
+#footer > .container {
+  
+}
+
+@media (min-width: 767px) {
+  .navbar-nav.nav-justified > li{
+      float:none;
+  }
+}
+.navbar-nav {
+  margin: 1px 1px; 
+}  
+  
+/* customize nav style */
+.navbar-custom {
+    font-family: 'Kreon', serif;
+    font-size: 20px;
+    background-color: #2e2e2e;
+  font-weight:700;
+    text-transform:uppercase;
+    border-width:0;
+}
+.navbar-custom  .navbar-nav>li>a {
+  color: #ddd;
+}
+.navbar-custom  .navbar-nav li>a:hover, .navbar-nav li .open, .navbar-custom .navbar-nav .active a  {
+  background-color: #000;
+}
+.navbar-custom .dropdown-menu{
+  right:0;
+}
+.navbar-custom .navbar-nav>.dropdown>a .caret {
+  border-top-color: #999;
+  border-bottom-color: #999;
+}
+
+.navbar-collapse.in { /*3.0.2 bug workaround*/
+    overflow-y: visible;
 }
 
 .navbar-toggle {
-  color:#fff;
-    border-width:0;
-}
-  
-.navbar-toggle:hover {
-  background-color:#fff;
+  outline:0;
 }
 
-.panel,.panel-heading {
-    border-radius:0;
-    border-width:0;
-    -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.09);
-  box-shadow: 0 3px 3px  rgba(0, 0, 0, 0.09);
-}
 
-.thumbnail {
-  margin-bottom:8px;
-  border-radius:0;
+.scroll-top {
+   position:fixed;
+   bottom:0;
+   right:6%;
+   z-index:100;
+   background: #ffcc33;
+   font-size:24px;
+   border-top-left-radius:3px;
+   border-top-right-radius:3px;
 }
-
-.well {
-    border-radius:0;
-}
-
-.accordion-heading .accordion-toggle, .accordion-inner, .nav-stacked li > a {
-  padding-left:1px;
-}
+.scroll-top a:link,.scroll-top a:visited {
+  color:#222;
+} 
 
 footer {
   height:50px;
@@ -158,53 +197,6 @@ footer {
     margin-top:20px;
 }
 
-@media (min-width: 992px) {
-  .no-gutter.row > div[class*='col-md'] {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .no-gutter.row > .col-md-12 {
-    width: 99.99999999999999%;
-    *width: 99.93055555555554%;
-  }
-  .no-gutter.row .col-md-11 {
-    width: 91.66666666666666%;
-    *width: 91.59722222222221%;
-  }
-  .no-gutter.row > .col-md-10 {
-    width: 83.33333333333331%;
-    *width: 83.26388888888887%;
-  }
-  .no-gutter.row > .col-md-9 {
-    width: 74.99999999999999%;
-    *width: 74.93055555555554%;
-  }
-  .no-gutter.row > .col-md-8 {
-    width: 66.66666666666666%;
-    *width: 66.59722222222221%;
-  }
-  .no-gutter.row > .col-md-7 {
-    width: 58.33333333333333%;
-    *width: 58.263888888888886%;
-  }
-  .no-gutter.row > .col-md-6 {
-    width: 49.99999999999999%;
-  }
-  .no-gutter.row > .col-md-4 {
-    width: 33.33333333333333%;
-  }
-  .no-gutter.row > .col-md-3 {
-    width: 24.999999999999996%;
-    *width: 24.930555555555554%;
-  }
-  .no-gutter.row > .col-md-2 {
-    width: 16.666666666666664%;
-    *width: 16.59722222222222%;
-  }
-  .no-gutter.row > .col-md-1 {
-    width: 8.333333333333332%;
-    *width: 8.263888888888888%;
-  }
-}
+
 
 /* end custom theme */

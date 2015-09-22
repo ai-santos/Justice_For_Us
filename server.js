@@ -113,17 +113,21 @@ app.get('/profile', function (req, res) {
 // logout route (destroys session)
 app.get('/logout', function (req, res) {
   req.logout();
-  res.redirect('/');
+  res.redirect('/home');
 });
 
  
 
 // //STATIC ROUTES
 //homepage
-app.get('/', function (req, res) {
+app.get('/home', function (req, res) {
     res.sendFile(__dirname + '/public/views/index.html');
 });
 
+//PROJECTS
+app.get('/projects', function (req, res) {
+  res.sendFile(__dirname + '/public/views/projects.html');
+});
 //API ROUTES
 
 //ROUTE to GET all project posts

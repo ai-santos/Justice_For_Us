@@ -4,12 +4,33 @@
 
 $(document).on("ready", function () {
 
+$('#nav').affix({
+      offset: {
+        top: $('header').height()-$('#nav').height()
+      }
+}); 
+
+/* highlight the top nav as scrolling occurs */
+$('body').scrollspy({ target: '#nav' })
+
+/* smooth scrolling for scroll to top */
+$('.scroll-top').click(function(){
+  $('body,html').animate({scrollTop:0},1000);
+})
+
+/* smooth scrolling for nav sections */
+$('#nav .navbar-nav li>a').click(function(){
+  var link = $(this).attr('href');
+  var posi = $(link).offset().top+20;
+  $('body,html').animate({scrollTop:posi},700);
+})
+
   //compile blog template
   var template = _.template($('#projects-template').html());
 
   L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg';
-  var map = L.mapbox.map('map', 'mapbox.high-contrast')
-                .setView([37.782, -122.381], 12);
+  var map = L.mapbox.map('map', 'mapbox.wheatpaste')
+                .setView([37.833, -122.381], 11);
 
   map.scrollWheelZoom.disable();
                 
@@ -27,9 +48,9 @@ $(document).on("ready", function () {
         },
         properties: {
           description: address,
-          'marker-size': 'small',
-          'marker-color': '#19B919',
-          // 'marker-symbol': 'flag'
+          'marker-size': 'medium',
+          'marker-color': '#6c6c6c',
+          'marker-symbol': 'commercial'
         }
       }).addTo(map);
     };
@@ -100,6 +121,9 @@ $(document).on("ready", function () {
       $('#current-projects').append($projectHtml)
     });
   }        
+
+
+
 
 
   

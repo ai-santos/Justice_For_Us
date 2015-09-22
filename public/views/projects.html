@@ -21,35 +21,41 @@
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet'/>
 
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet' />
-
-<style>
-  html, body {
-    height: 100%;
-  }
-  
-  #map { 
-    position: relative;
-    top:0; 
-    bottom:0; 
-    width:75%; 
-    height: 80vh; 
-    margin:500; 
-    padding:50; 
-    text-align: right;
-  }
-
-</style>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet'/>
 
 </head>
 <body>
-  <div id="header" <h1>Justice For Us</h1></div>
-  <a href="index.html">Home</a><br><br> 
-
-<img src="http://www.clker.com/cliparts/6/v/y/L/S/U/fist-hi.png" id="fist" width=5% height=10%>
-<div class="container">    
+<div id="wrap">
+  <!-- Fixed navbar -->
+<div class="navbar navbar-custom navbar-inverse navbar-fixed-top" id="nav">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav nav-center">
+        <li><a href="/home">Home</a></li>
+        <li><a href="#section4">About</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/projects">Projects</a></li>
+<!--         <li><a href="giving_circle.html">Giving Circle</a></li>
+        <li><a href="#section1">Connect</a></li> -->
+        <li><a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#login-modal">Log In</a></li>
+        <li><a href="/logout">Log Out</a></li>
+    </div>
+</div>
+</ul>
+</div><!--/.nav-collapse -->
+</div><!--/.container -->
+</div><!--/.navbar -->
+<div class="container" id="projects-container">    
   <div class="row">
-    <div class="col-xs-12 col-md-3"><h4>Submit Your Project and Organization Information</h4>
+    <div class="col-xs-12 col-md-3"><h4>Submit Your Project</h4>
       <form id="projects-form">
         <div class="form-group">
           <input type="Project Name" name="project[project_name]" class="form-control" id="entry-proj" placeholder="Project Name" autofocus>
@@ -70,13 +76,9 @@
 
 
   <div id='map'>
-  <div class="col-xs-5 col-md-9"><script>
-
-
-</script><br></div>
+  <div class="col-xs-5 col-md-9"><br></div>
   </div></div>
 
- 
  <!-- Add projects template here -->
  <div class="container">
   <div class="row">
@@ -87,24 +89,29 @@
 
  <!--underscore template -->
 <script type="text/template" id="projects-template">
-  <div class="projects_list">
-    <p>
-      <%= project.project_name %><br> 
-      <%= project.organization %><br>
-      <%= project.contact %><br>  
-      <%= project.address %><br>
-      <%= project.city_state %><br>
-      <%= project.zip %><br>
-      <%= project.phone %> 
-      <script>  
-        geocoder.query()
-      </script>
-    </p>
-  </div>
+  <div class="col-md-4" id="post">
+    <div class="projects_list">
+      <p>
+        <%= project.project_name %><br> 
+        <%= project.organization %><br>
+        <%= project.contact %><br>  
+        <%= project.address %><br>
+        <%= project.city_state %><br>
+        <%= project.zip %><br>
+        <%= project.phone %> 
+        <script>  
+          geocoder.query()
+        </script>
+      </p>
+    </div>
+  </div>  
 </script>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+
+<!--masonry-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
 
 <!-- underscore -->
 <script src="scripts/underscore.js"></script>
