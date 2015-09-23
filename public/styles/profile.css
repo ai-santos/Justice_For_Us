@@ -11,6 +11,10 @@
   margin-left:15px;
   }
 
+  header {
+  padding-left: 15px;
+  }
+
   #content {
   padding-right:15px;
   }
@@ -147,10 +151,8 @@ h1,h2,h3,h4 {
 /* customize nav style */
 .navbar-custom {
     font-family: 'Kreon', serif;
-    font-size: 20px;
+    font-size: 18px;
     background-color: #2e2e2e;
-  font-weight:700;
-    text-transform:uppercase;
     border-width:0;
 }
 .navbar-custom  .navbar-nav>li>a {
