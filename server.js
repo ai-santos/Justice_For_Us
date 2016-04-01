@@ -128,6 +128,7 @@ app.get('/home', function (req, res) {
 app.get('/projects', function (req, res) {
   res.sendFile(__dirname + '/public/views/projects.html');
 });
+
 //API ROUTES
 
 //ROUTE to GET all project posts

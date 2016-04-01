@@ -1,0 +1,108 @@
+@import url(http://fonts.googleapis.com/css?family=Kreon:400,700);
+
+html, body {
+    height: 100%;
+    background: url("images/brickwall_@2X");
+    /* The html and body elements cannot have any padding or margin. */
+    -webkit-font-smoothing: antialiased;
+    font: normal 18px 'Kreon',sans-serif; 
+  }
+
+  #projects-container {
+    padding-top: 100px;
+  }
+
+  /*Post styling*/
+#post {
+  margin-right: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 2px 10px #888888;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+  
+  #map { 
+    position: relative;
+    top:0; 
+    bottom:0; 
+    width:75%; 
+    height: 80vh; 
+    margin:500; 
+    padding:50; 
+    text-align: right;
+  }
+/* Custom page CSS
+-------------------------------------------------- */
+
+#wrap > .container {
+  padding: 60px 15px 0;
+}
+.container .credit {
+  margin: 20px 0;
+}
+
+#footer {
+  background-color:#414141;
+}
+
+#footer a {
+  color:#efefef;
+}
+
+h1,h2,h3,h4 {
+  font-family: 'Kreon', serif;
+  vertical-align:middle;
+}
+
+header {
+  background: teal;
+  height:550px;
+  color:#000000;
+}
+
+header h1,header h2,header h3 a,header a,header a:hover {
+  color:#101010;
+  font-weight:800;
+  text-decoration:none;
+}
+
+header h3 {
+  font-family: 'Kreon', serif;
+  background: #ffcc33;
+  padding:10px;
+  border-radius:3px;
+  font-size:34px;
+  padding:12px 10px 6px 10px;
+}
+
+header .dropdown-menu {
+  top:74px;
+  background: #ffcc33;
+  border-width:0;
+}
+
+h1 {
+  font-size:50px;
+}
+
+$('#nav').affix({
+      offset: {
+        top: $('header').height()-$('#nav').height()
+      }
+}); 
+
+/* highlight the top nav as scrolling occurs */
+$('body').scrollspy({ target: '#nav' })
+
+/* smooth scrolling for scroll to top */
+$('.scroll-top').click(function(){
+  $('body,html').animate({scrollTop:0},1000);
+})
+
+/* smooth scrolling for nav sections */
+$('#nav .navbar-nav li>a').click(function(){
+  var link = $(this).attr('href');
+  var posi = $(link).offset().top+20;
+  $('body,html').animate({scrollTop:posi},700);
+})
