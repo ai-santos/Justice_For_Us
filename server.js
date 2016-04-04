@@ -106,7 +106,7 @@ app.get('/profile', function (req, res) {
   //   } else {
   //     res.redirect('/');
   //   }
-  res.sendFile(__dirname + '/public/views/profile.html');
+  res.sendFile(__dirname + '/public/profile.html');
   // });
 });
 
@@ -126,7 +126,7 @@ app.get('/home', function (req, res) {
 
 //PROJECTS
 app.get('/projects', function (req, res) {
-  res.sendFile(__dirname + '/public/views/projects.html');
+  res.sendFile(__dirname + '/public/projects.html');
 });
 
 //API ROUTES
