@@ -29,7 +29,7 @@ $('#nav .navbar-nav li>a').click(function(){
   var template = _.template($('#projects-template').html());
 
   L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg';
-  var map = L.mapbox.map('map', 'mapbox.wheatpaste')
+  var map = L.mapbox.map('map', 'mapbox.high-contrast')
                 .setView([37.833, -122.381], 11);
 
   map.scrollWheelZoom.disable();
