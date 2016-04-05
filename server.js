@@ -121,12 +121,12 @@ app.get('/logout', function (req, res) {
 // //STATIC ROUTES
 //homepage
 app.get('/home', function (req, res) {
-    res.sendFile(__dirname + '/public/index.html');
+    res.sendFile(__dirname + '/public/views/index.html');
 });
 
 //PROJECTS
 app.get('/projects', function (req, res) {
-  res.sendFile(__dirname + '/public/projects.html');
+  res.sendFile(__dirname + '/public/views/projects.html');
 });
 
 //API ROUTES
