@@ -106,7 +106,7 @@ app.get('/profile', function (req, res) {
   //   } else {
   //     res.redirect('/');
   //   }
-  res.sendFile(__dirname + '/public/profile.html');
+  res.sendFile(__dirname + '/public/views/profile.html');
   // });
 });
 

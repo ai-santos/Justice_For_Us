@@ -42,6 +42,37 @@
       position:static;
 }
 
+
+
+.fb-profile img.fb-image-lg{
+    z-index: 0;
+    width: 100%;  
+    margin-bottom: 10px;
+}
+
+.fb-image-profile
+{
+    margin: -90px 10px 0px 50px;
+    z-index: 9;
+    width: 20%; 
+}
+
+@media (max-width:768px)
+{
+    
+.fb-profile-text>h1{
+    font-weight: 700;
+    font-size:16px;
+}
+
+.fb-image-profile
+{
+    margin: -45px 10px 0px 25px;
+    z-index: 9;
+    width: 20%; 
+}
+}
+
 body {
   font-family: 'Lato', sans-serif;
   font-weight:300;
@@ -140,18 +171,21 @@ h1,h2,h3,h4 {
 }
 .navbar-nav {
   margin: 1px 1px; 
-}  
+}
+
+
   
 /* customize nav style */
 .navbar-custom {
     font-family: 'Lato', sans-serif;
-    font-size: 18px;
     background-color: #2e2e2e;
     border-width:0;
 }
+
 .navbar-custom  .navbar-nav>li>a {
   color: #ddd;
 }
+
 .navbar-custom  .navbar-nav li>a:hover, .navbar-nav li .open, .navbar-custom .navbar-nav .active a  {
   background-color: #000;
 }
