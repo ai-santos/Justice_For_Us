@@ -4,6 +4,11 @@
 
 $(document).on("ready", function () {
 
+var nav = $('.content-nav');
+if (nav.length) {
+  var contentNav = nav.offset().top;
+}
+
 $('#nav').affix({
       offset: {
         top: $('header').height()-$('#nav').height()
