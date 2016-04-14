@@ -5,14 +5,16 @@ html, body {
     -webkit-font-smoothing: antialiased;
     font: normal 18px 'Lato', sans-serif; 
   }
-
+  
+.grid-item { width: 200px; }
+.grid-item--width2 { width: 400px; }
 #projects-container {
     padding-top: 100px;
   }
 
   /*Post styling*/
 #post {
-  margin-right: 20px;
+  margin-right: 0 auto;
   border-radius: 5px;
   box-shadow: 1px 2px 10px #888888;
   margin-bottom: 20px;

@@ -12,7 +12,7 @@
   <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
   <!-- custom styles -->
-  <link type="text/css" rel="stylesheet" href="views/styles/projects.css">
+  <link type="text/css" rel="stylesheet" href="styles/projects.css">
 
   <!-- fonts -->
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -54,7 +54,8 @@
 </div><!--/.nav-collapse -->
 </div><!--/.container -->
 </div><!--/.navbar -->
-<div class="container" id="projects-container">    
+
+<div class="container" id="projects-container">  
   <div class="row">
     <div class="col-xs-12 col-md-3"><h4>Submit Your Project</h4>
       <form id="projects-form">
@@ -77,18 +78,18 @@
 
 
   <div id='map'>
-  <div class="col-xs-5 col-md-9"><br></div>
-  </div></div>
+    <div class="col-xs-5 col-md-9"><br></div>
+  </div>
+</div>
 
  <!-- Add projects template here -->
- <div class="container">
-  <div class="row">
-  <div class="col-xs-9 col-md-9-offset"><h4>Current Projects</h4>
+<div class="grid">
+<h4>Current Projects</h4>
     <div class="projects_list" id="current-projects">
   </div>
 
 
- <!--underscore template -->
+  <div class="grid-item"> <!--underscore template -->
 <script type="text/template" id="projects-template">
   <div class="col-md-4" id="post">
     <div class="projects_list">
@@ -106,7 +107,15 @@
       </p>
     </div>
   </div>  
-</script>
+</script></div>
+  <div class="grid-item grid-item--width2">...</div>
+  <div class="grid-item">...</div>
+  ...
+  </div>
+</div>
+
+
+
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
@@ -115,10 +124,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
 
 <!-- underscore -->
-<script src="views/scripts/underscore.js"></script>
+<script src="scripts/underscore.js"></script>
 
 <!-- custom scripts -->
-<script type="text/javascript" src="views/scripts/projdata.js"></script>
+<script type="text/javascript" src="scripts/projdata.js"></script>
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

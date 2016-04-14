@@ -1,5 +1,10 @@
 $(document).ready(function(){/* affix the navbar after scroll below header */
 
+var nav = $('#nav');
+if (nav.length) {
+  var contentNav = nav.offset().top;
+}
+
 $('#nav').affix({
       offset: {
         top: $('header').height()-$('#nav').height()
@@ -17,8 +22,8 @@ $('.scroll-top').click(function(){
 /* smooth scrolling for nav sections */
 $('#nav .navbar-nav li>a').click(function(){
   var link = $(this).attr('href');
-  var posi = $(link).offset().top+20;
-  $('body,html').animate({scrollTop:posi},700);
+  // var posi = $(link).offset().top+20;
+  // $('body,html').animate({scrollTop:posi},700);
 })
 
 }); 

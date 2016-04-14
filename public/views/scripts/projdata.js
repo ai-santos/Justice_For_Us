@@ -4,7 +4,7 @@
 
 $(document).on("ready", function () {
 
-var nav = $('.content-nav');
+var nav = $('#nav');
 if (nav.length) {
   var contentNav = nav.offset().top;
 }
