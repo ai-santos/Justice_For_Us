@@ -83,15 +83,14 @@
 </div>
 
  <!-- Add projects template here -->
-<div class="grid">
 <h4>Current Projects</h4>
     <div class="projects_list" id="current-projects">
   </div>
 
-
+  <div class="grid-sizer">
   <div class="grid-item"> <!--underscore template -->
 <script type="text/template" id="projects-template">
-  <div class="col-md-4" id="post">
+  <div class="grid-item grid-item" id="post">
     <div class="projects_list">
       <p>
         <%= project.project_name %><br> 
@@ -105,9 +104,10 @@
           geocoder.query()
         </script>
       </p>
-    </div>
-  </div>  
-</script></div>
+    </div> 
+</script>
+</div>
+ 
   <div class="grid-item grid-item--width2">...</div>
   <div class="grid-item">...</div>
   ...

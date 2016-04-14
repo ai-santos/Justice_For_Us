@@ -35,7 +35,7 @@ $('#nav .navbar-nav li>a').click(function(){
 
   L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg';
   var map = L.mapbox.map('map', 'mapbox.high-contrast')
-                .setView([37.833, -122.381], 11);
+                .setView([37.797, -122.31], 11);
 
   map.scrollWheelZoom.disable();
                 
@@ -54,7 +54,7 @@ $('#nav .navbar-nav li>a').click(function(){
         properties: {
           description: address,
           'marker-size': 'medium',
-          'marker-color': '#6c6c6c',
+          'marker-color': '#CD0000',
           'marker-symbol': 'commercial'
         }
       }).addTo(map);
